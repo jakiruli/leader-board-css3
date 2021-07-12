@@ -44,7 +44,7 @@ hr {
   width: 56px;
   height: 56px;
 }
-.palyer-name {
+.player-name {
   margin-left: 16px;
   font-size: 18px;
 }
@@ -78,6 +78,11 @@ hr {
 }
 
 /* courses style */
+.courses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 24px;
+}
 
 .course .course-banner img {
   width: 224px;
@@ -85,6 +90,8 @@ hr {
 }
 .course-info {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .fa-star {
   font-size: 12px;
@@ -94,4 +101,34 @@ hr {
 }
 .fa-star.empty {
   color: #aeaeae;
+}
+/* Media quries */
+/* mobile devices */
+@media only screen and (max-width: 688px) {
+  .container {
+    width: 100%;
+  }
+  .players,
+  .blogs,
+  .courses {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .player,
+  .blog {
+    flex-direction: column;
+  }
+}
+
+/* table decices */
+@media only screen and (min-width: 688px) and (max-width: 992px) {
+  .container {
+    width: 100%;
+  }
+  .players,
+  .courses {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .blogs {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
